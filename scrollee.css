@@ -79,8 +79,8 @@
   text-align: right;
 }
 
-.scrollee .scrollee-dynamic .scrollee-small-list li{
-    font-size: 1.4rem;
+.scrollee .scrollee-dynamic .scrollee-small-list li {
+  font-size: 1.4rem;
 }
 
 .scrollee .scrollee-dynamic .scrollee-content-top,
@@ -95,6 +95,12 @@
   height: 120px;
   overflow: hidden;
   text-align: right;
+  border-bottom: 1px solid #fff;
+}
+
+.scrollee .scrollee-dynamic .scrollee-big-list a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .scrollee .scrollee-dynamic .scrollee-small-list {
@@ -124,5 +130,25 @@
 
 .scrollee .scrollee-dynamic .scrollee-content {
   position: absolute;
+  margin-top: 30px;
+}
+
+.scrollee .scrollee-dynamic .scrollee-content > div {
   display: none;
+}
+
+.scrollee .scrollee-dynamic .scrollee-content > div.active {
+  display: block;
+}
+
+.scrollee .scrollee-dynamic .scrollee-content a {
+  text-decoration: none;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.scrollee .scrollee-dynamic .scrollee-content a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
