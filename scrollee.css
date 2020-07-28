@@ -1,0 +1,123 @@
+.scrollee.initialized .scrollee-item {
+  display: none;
+}
+
+.scrollee {
+  height: 100vh;
+  color: #fff;
+}
+
+.scrollee .scrollee-dynamic {
+  position: relative;
+  height: 100vh;
+  position: sticky;
+  overflow: hidden;
+  background-color: #000;
+  top: 0;
+}
+
+.scrollee .scrollee-dynamic .scrollee-backgrounds {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -200px;
+  bottom: -200px;
+}
+
+.scrollee .scrollee-dynamic .scrollee-backgrounds img {
+  transition: all 0.45s cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.scrollee .scrollee-dynamic .scrollee-backgrounds.anim-up img {
+  transform: translate3d(0, -200px, 0);
+}
+.scrollee .scrollee-dynamic .scrollee-backgrounds.anim-up img.prevActive {
+  transform: translate3d(0, 200px, 0);
+}
+
+.scrollee .scrollee-dynamic .scrollee-backgrounds.anim-down img {
+  transform: translate3d(0, 200px, 0);
+}
+.scrollee .scrollee-dynamic .scrollee-backgrounds.anim-down img.prevActive {
+  transform: translate3d(0, -200px, 0);
+}
+
+.scrollee .scrollee-dynamic .scrollee-backgrounds img.active {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.scrollee .scrollee-dynamic .scrollee-backgrounds .overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.scrollee .scrollee-dynamic .scrollee-backgrounds img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.scrollee .scrollee-dynamic ul,
+.scrollee .scrollee-dynamic li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scrollee .scrollee-dynamic .scrollee-small-list {
+  margin-top: 50px;
+  text-align: right;
+  font-size: 1.4rem;
+}
+
+.scrollee .scrollee-dynamic .scrollee-content-top,
+.scrollee .scrollee-dynamic .scrollee-content-bottom {
+  flex: 1;
+  height: 25vh;
+}
+
+.scrollee .scrollee-dynamic .scrollee-big-list {
+  position: static;
+  margin-top: 0;
+  font-size: 100px;
+  height: 120px;
+  overflow: hidden;
+  text-align: right;
+}
+
+.scrollee .scrollee-dynamic .scrollee-small-list {
+  overflow: hidden;
+}
+
+.scrollee .scrollee-dynamic .scrollee-big-list ul,
+.scrollee .scrollee-dynamic .scrollee-small-list ul {
+  transition: all 0.45s cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.scrollee .scrollee-dynamic .scrollee-big-list li {
+  height: 120px;
+}
+
+.scrollee .scrollee-dynamic .scrollee-content-wrap {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.scrollee .scrollee-dynamic .scrollee-content {
+  position: absolute;
+  display: none;
+}
