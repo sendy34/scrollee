@@ -40,8 +40,8 @@
 
     var doCalc = function() {
       calc.offsetTop = $element.offset().top;
-      calc.itemHeight = $element.find(".scrollee-big-list").height();
-      calc.miniItemHeight = $element.find(".scrollee-small-list li").height();
+      calc.itemHeight = $element.find(".scrollee-big-list").outerHeight();
+      calc.miniItemHeight = $element.find(".scrollee-small-list li").outerHeight();
     };
 
     var prevItem = -1;
