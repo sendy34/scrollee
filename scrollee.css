@@ -131,6 +131,7 @@
 .scrollee .scrollee-dynamic .scrollee-content {
   position: absolute;
   margin-top: 30px;
+  z-index: 2;
 }
 
 .scrollee .scrollee-dynamic .scrollee-content > div {
