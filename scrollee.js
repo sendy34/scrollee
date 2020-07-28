@@ -1,8 +1,9 @@
+/* eslint-disable */
 (function($) {
   $.scrollee = function(element, options) {
     var defaults = {
-      containerClass: 'container',
-      itemScroll: 400,
+      containerClass: "container",
+      itemScroll: 400
       // onFoo: function() {}
     };
 
@@ -41,7 +42,9 @@
     var doCalc = function() {
       calc.offsetTop = $element.offset().top;
       calc.itemHeight = $element.find(".scrollee-big-list").outerHeight();
-      calc.miniItemHeight = $element.find(".scrollee-small-list li").outerHeight();
+      calc.miniItemHeight = $element
+        .find(".scrollee-small-list li")
+        .outerHeight();
     };
 
     var prevItem = -1;
@@ -91,6 +94,12 @@
         ".scrollee-backgrounds img:nth-child(" + (itemIndex + 1) + ")"
       );
 
+      $element.find(".scrollee-content > div").removeClass("active");
+      var $contentItem = $element.find(
+        ".scrollee-content > div:nth-child(" + (itemIndex + 1) + ")"
+      );
+      $contentItem.addClass("active");
+
       $img.addClass("active");
 
       $element.find(".scrollee-small-list ul").css({
@@ -116,13 +125,19 @@
 
       var $list = $("<div />", { class: "scrollee-small-list" });
       var $listUl = $("<ul />");
+
       for (var i = 0; i < items.length; i++) {
         $listUl.append($("<li />", { text: items[i].title }));
       }
       $list.append($listUl);
 
-      var $bigList = $list.clone();
-      $bigList.removeClass("scrollee-small-list").addClass("scrollee-big-list");
+      var $bigList = $("<div />", { class: "scrollee-big-list" });
+      var $bigListUl = $("<ul />");
+      for (var i = 0; i < items.length; i++) {
+        var $a = $("<a />", { href: items[i].link, text: items[i].title });
+        $bigListUl.append($("<li />").append($a));
+      }
+      $bigList.append($bigListUl);
 
       var $backgrounds = $("<div />", { class: "scrollee-backgrounds" });
       var $backgroundImages = $("<div />", {
@@ -144,7 +159,9 @@
 
       $backgrounds.appendTo($dynamicContent);
 
-      $("<div />", { class: "scrollee-content-wrap " + plugin.settings.containerClass })
+      $("<div />", {
+        class: "scrollee-content-wrap " + plugin.settings.containerClass
+      })
         .append($("<div />", { class: "scrollee-content-top" }))
         .append($bigList)
         .append(
