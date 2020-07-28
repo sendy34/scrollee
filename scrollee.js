@@ -1,6 +1,7 @@
 (function($) {
   $.scrollee = function(element, options) {
     var defaults = {
+      containerClass: 'container',
       itemScroll: 400,
       // onFoo: function() {}
     };
@@ -143,7 +144,7 @@
 
       $backgrounds.appendTo($dynamicContent);
 
-      $("<div />", { class: "scrollee-content-wrap container" })
+      $("<div />", { class: "scrollee-content-wrap " + plugin.settings.containerClass })
         .append($("<div />", { class: "scrollee-content-top" }))
         .append($bigList)
         .append(
