@@ -109,6 +109,8 @@
 .scrollee .scrollee-dynamic .scrollee-big-list li {
   height: 120px;
   font-size: 100px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .scrollee .scrollee-dynamic .scrollee-content-wrap {
