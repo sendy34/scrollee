@@ -3,7 +3,7 @@
   $.scrollee = function(element, options) {
     var defaults = {
       containerClass: "container",
-      itemScroll: 400
+      itemScroll: 1000
       // onFoo: function() {}
     };
 
@@ -49,9 +49,6 @@
 
     var prevItem = -1;
     var dir = 1;
-
-    var timeout1 = null;
-    var timeout2 = null;
 
     var handleScroll = function() {
       var delta = $(window).scrollTop() - calc.offsetTop;
