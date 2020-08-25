@@ -92,14 +92,18 @@
 .scrollee .scrollee-dynamic .scrollee-big-list {
   position: static;
   margin-top: 0;
-  height: 120px;
+  height: 140px;
   overflow: hidden;
   text-align: right;
   border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
 }
 
 .scrollee .scrollee-dynamic .scrollee-big-list .scrollee-item-category {
-  font-size: 1rem;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.8;
 }
 
 .scrollee .scrollee-dynamic .scrollee-big-list a {
@@ -110,9 +114,10 @@
 .scrollee .scrollee-dynamic .scrollee-filters-wrap {
   position: absolute;
   z-index: 999;
-  top: 50px;
+  top: 50%;
   left: 0;
   right: 0;
+  transform: translateY(-150px);
 }
 
 .scrollee .scrollee-dynamic .scrollee-filters {
@@ -145,6 +150,7 @@
 }
 
 .scrollee .scrollee-dynamic .scrollee-big-list li {
+  padding-top: 20px;
   height: 120px;
   font-size: 100px;
   line-height: 1;
