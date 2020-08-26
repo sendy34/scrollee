@@ -97,6 +97,7 @@
   text-align: right;
   border-bottom: 1px solid #fff;
   border-top: 1px solid #fff;
+  box-sizing: content-box; /** So that border is excluded in calc */
 }
 
 .scrollee .scrollee-dynamic .scrollee-big-list .scrollee-item-category {
