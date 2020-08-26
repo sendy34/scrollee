@@ -104,6 +104,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   opacity: 0.8;
+  padding-top: 20px;
 }
 
 .scrollee .scrollee-dynamic .scrollee-big-list a {
@@ -150,8 +151,7 @@
 }
 
 .scrollee .scrollee-dynamic .scrollee-big-list li {
-  padding-top: 20px;
-  height: 120px;
+  height: 140px;
   font-size: 100px;
   line-height: 1;
   white-space: nowrap;
