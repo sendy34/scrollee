@@ -68,9 +68,7 @@
     var doCalc = function () {
       calc.offsetTop = $element.offset().top;
       calc.itemHeight = $element.find(".scrollee-big-list").height();
-      calc.miniItemHeight = $element
-        .find(".scrollee-small-list li")
-        .outerHeight();
+      calc.miniItemHeight = $element.find(".scrollee-small-list li").height();
     };
 
     var prevItem = -1;
