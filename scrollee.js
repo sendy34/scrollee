@@ -74,10 +74,14 @@
     var prevItem = -1;
     var dir = 1;
 
-    var handleScroll = function () {
+    var handleScroll = function (e, force) {
       var delta = $(window).scrollTop() - calc.offsetTop;
       var itemWithProgress = delta / plugin.settings.itemScroll;
       var itemIndex = Math.floor(itemWithProgress);
+
+      if (typeof force === "undefined") {
+        force = false;
+      }
 
       if (itemIndex > prevItem) {
         dir = 1;
@@ -88,7 +92,12 @@
       }
 
       if (dir === 0) {
-        return;
+        if (force) {
+          dir = 1;
+        } else {
+          console.log("Returning");
+          return;
+        }
       }
 
       prevItem = itemIndex;
@@ -104,8 +113,15 @@
       $element
         .find(".scrollee-backgrounds")
         .removeClass("anim-up")
-        .removeClass("anim-down")
-        .addClass(dir === 1 ? "anim-down" : "anim-up");
+        .removeClass("anim-down");
+
+      if (!force) {
+        $element
+          .find(".scrollee-backgrounds")
+          .addClass(dir === 1 ? "anim-down" : "anim-up");
+      } else {
+        console.log("Was forced");
+      }
 
       $element.find(".scrollee-backgrounds img").removeClass("prevActive");
       $element.find(".scrollee-backgrounds img.active").addClass("prevActive");
@@ -227,8 +243,10 @@
         $(this).addClass("active");
 
         filter = $(this).attr("data-filter") || null;
+
         createStructure();
-        window.scrollTo(0, 0);
+        handleScroll({}, true);
+        // window.scrollTo(0, 0);
       });
 
       $dynamicContent.appendTo($element);

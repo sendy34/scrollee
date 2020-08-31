@@ -120,6 +120,7 @@
   left: 0;
   right: 0;
   transform: translateY(-150px);
+  height: auto;
 }
 
 .scrollee .scrollee-dynamic .scrollee-filters {
