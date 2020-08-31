@@ -246,7 +246,7 @@
 
         createStructure();
         handleScroll({}, true);
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
       });
 
       $dynamicContent.appendTo($element);
