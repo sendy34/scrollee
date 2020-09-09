@@ -161,6 +161,9 @@
       $element.find(".scrollee-dynamic").remove();
       var $dynamicContent = $("<div />", { class: "scrollee-dynamic" });
 
+      var $overlay = $("<div />", { class: "scrollee-overlay" });
+      $overlay.appendTo($dynamicContent);
+
       var $list = $("<div />", { class: "scrollee-small-list" });
       var $listUl = $("<ul />");
 
