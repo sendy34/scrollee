@@ -3,7 +3,8 @@
   $.scrollee = function (element, options) {
     var defaults = {
       containerClass: "container",
-      itemScroll: 1000
+      itemScroll: 1000,
+      onInit: function() {}
       // onFoo: function() {}
     };
 
@@ -53,6 +54,7 @@
       }
 
       createStructure();
+      plugin.settings.onInit( $element );
     };
 
     plugin.foo_public_method = function () {

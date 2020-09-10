@@ -139,7 +139,11 @@
 
     <script src="./scrollee.js"></script>
     <script>
-      $(".scrollee").scrollee();
+      $(".scrollee").scrollee({
+        onInit: function (el) {
+          console.log(el.find(".scrollee-dynamic"));
+        }
+      });
     </script>
   </body>
 </html>
