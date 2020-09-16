@@ -36,6 +36,17 @@
     var filter = null;
     var items = [];
 
+    if (window.location.hash) {
+      filter = window.location.hash.split("#")[1];
+    }
+
+    function slugify(str) {
+      if (!str) {
+        return null;
+      }
+      return str.split(" ").join("-").toLowerCase();
+    }
+
     function updateItemsBasedOnFilters() {
       // filter items based on filter
       if (!filter) {
@@ -43,7 +54,7 @@
       } else {
         items = [];
         for (var i = 0; i < allItems.length; i++) {
-          if (allItems[i].category === filter) {
+          if (slugify(allItems[i].category) === slugify(filter)) {
             items.push(allItems[i]);
           }
         }
@@ -249,7 +260,7 @@
       for (var i = 0; i < categories.length; i++) {
         $filters.append(
           $("<li />", {
-            class: filter === categories[i] ? "active" : "",
+            class: slugify(filter) === slugify(categories[i]) ? "active" : "",
             "data-filter": categories[i],
             text: categories[i]
           })
@@ -264,6 +275,7 @@
 
         filter = $(this).attr("data-filter") || null;
 
+        window.location.hash = slugify(filter) || "";
         createStructure();
         handleScroll({}, true);
         window.scrollTo(0, 0);
