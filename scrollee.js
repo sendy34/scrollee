@@ -79,6 +79,16 @@
           categories.push(allItems[i].category);
         }
       }
+      
+      // After creating filters, sort the items based on filter order
+      var sortedAllItems = [];
+      for (var j = 0; j < categories.length; j++) {
+        var foundItems = allItems.filter( item => item.category == categories[j] )
+        for (var k = 0; k < foundItems.length; k++) {
+          sortedAllItems.push(foundItems[k])
+        }
+      }
+      allItems = sortedAllItems;
 
       createStructure();
       plugin.settings.onInit($element);
